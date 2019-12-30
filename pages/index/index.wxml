@@ -1,4 +1,52 @@
-<view>首页
-  <text class="iconfont icon-shoucang1"></text>
+<view>
+  <!-- 搜索框 开始 -->
+  <SearchInput>
+  
+  </SearchInput>
+
+  <!-- 轮播图 -->
+  <view class="index_swiper">
+  <!-- 
+    1. swiper标签存在默认的宽度和高度
+    100% * 150px 
+    2. image 标签也存在默认的宽度和高度
+    320px * 240px 
+    3. 设计图片和轮播图
+   -->
+   <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id"
+      >
+        <navigator>
+          <image src="{{item.image_src}}"></image>
+        
+        </navigator>
+      </swiper-item>  
+    </swiper>
+  </view>
+
+
+  <!-- 导航栏 -->
+  <view class="index_cate">
+    <navigator wx:for="{{cateList}}" wx:key="name">
+      <image mode="widthFix" src="{{item.image_src}}"></image>
+    </navigator>
+  </view>
+
+  <!-- 楼层 -->
+  <view class="index_floor">
+    <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+    <!-- 标题 -->
+      <view class="floor_title">
+        <image mode="widthFix" src="{{item.image_src}}">
+        
+        </image>
+      </view>
+      <!-- 内容 -->
+      <view class="floor_list">
+        <navigator wx:for="{{item1.product_list}}" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1">
+        </navigator>
+      </view>
+    </view>
+  </view>
 
 </view>

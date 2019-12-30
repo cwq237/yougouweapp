@@ -19,7 +19,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eb4450",
-    "navigationBarTitleText": "京东商城",
+    "navigationBarTitleText": "优购小程序",
     "navigationBarTextStyle": "white"
   },
   "tabBar":{
